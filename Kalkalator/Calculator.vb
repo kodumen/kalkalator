@@ -117,4 +117,13 @@ Public Class Calculator
     Public Function GetAnswer() As Double
         GetAnswer = answer
     End Function
+
+    ''' <summary>
+    ''' Reset the input.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub ClearInput()
+        strInput = "0"
+        input = 0
+    End Sub
 End Class
