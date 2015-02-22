@@ -71,6 +71,13 @@
         DoOperation(Kalkalator.Calculator.Operation.Division)
     End Sub
 
+    Private Sub Btn_Equals_Click(sender As Object, e As EventArgs) Handles Btn_Equals.Click
+        calculator.SetInputFromDisplay()
+        calculator.Solve()
+        calculator.GetAnswer()
+        calculator.ClearInput()
+    End Sub
+
     ''' <summary>
     ''' Helper function for doing arithmetic operations
     ''' </summary>
@@ -78,11 +85,10 @@
     ''' <remarks></remarks>
     Private Sub DoOperation(op As Calculator.Operation)
         ' Solve first the previously set operation
-        calculator.SetInput(Double.Parse(Textbox_Disp.Text))
+        calculator.SetInputFromDisplay()
         calculator.Solve()
         calculator.GetAnswer()
         calculator.SetOperator(op)
         calculator.ClearInput()
     End Sub
-
 End Class

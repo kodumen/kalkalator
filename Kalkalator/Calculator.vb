@@ -39,13 +39,17 @@ Public Class Calculator
         Me.input = input
     End Sub
 
+    Public Sub SetInputFromDisplay()
+        SetInput(strInput)
+    End Sub
+
     ''' <summary>
     ''' Display the string input to the Textbox set with SetDisplay().
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub DisplayToTextBox(str As String)
         If Not IsNothing(display) Then
-            display.Text = str
+            display.Text = str  ' VB can implicitly convert Strings to Double?! SHOOOOOOCK! BEAR SHOCK!
         End If
     End Sub
 
