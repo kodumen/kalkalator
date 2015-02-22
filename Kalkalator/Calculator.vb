@@ -40,7 +40,7 @@ Public Class Calculator
     End Sub
 
     Public Sub SetInputFromDisplay()
-        SetInput(strInput)
+        SetInput(strInput) ' VB can implicitly convert Strings to Double?! SHOOOOOOCK! BEAR SHOCK!
     End Sub
 
     ''' <summary>
@@ -49,7 +49,7 @@ Public Class Calculator
     ''' <remarks></remarks>
     Private Sub DisplayToTextBox(str As String)
         If Not IsNothing(display) Then
-            display.Text = str  ' VB can implicitly convert Strings to Double?! SHOOOOOOCK! BEAR SHOCK!
+            display.Text = str
         End If
     End Sub
 
