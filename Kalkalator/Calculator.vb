@@ -119,7 +119,7 @@ Public Class Calculator
 
     ''' <summary>
     ''' Return the stored answer. If there is a TextBox set via SetDisplay(),
-    ''' set TextBox text as the answer.
+    ''' set answer as TextBox text.
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
