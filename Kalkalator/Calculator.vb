@@ -26,34 +26,6 @@ Public Class Calculator
         GetDisplayInput = display.Text
     End Function
 
-    ' Display the string specified on the display
-    ' If an operator was previously used, the whole display text is replaced
-    ' Otherwise, the input string is concatenated
-    Private Sub DisplayInput(text As String)
-        ' This prevents having more than one decimal point on the input
-        If text.Contains(".") And display.Text.Contains(".") Then
-            Return
-        End If
 
-
-        If clearDisplay Then
-            display.Text = text
-        Else
-            display.Text &= text
-        End If
-
-        ' Stop display from clearing
-        clearDisplay = False
-    End Sub
-
-    ' Update the numerical input variable
-    ' If a display is set, display the string as well
-    Public Sub InputNumber(inputString As String)
-        If Not IsNothing(display) Then
-            DisplayInput(inputString)
-            inputString = display.Text
-        End If
-        input = Double.Parse(inputString)
-    End Sub
 
 End Class
