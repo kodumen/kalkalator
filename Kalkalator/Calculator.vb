@@ -40,14 +40,13 @@ Public Class Calculator
     End Sub
 
     ''' <summary>
-    ''' Display the string input the Textbox set with SetDisplay().
+    ''' Display the string input to the Textbox set with SetDisplay().
     ''' </summary>
     ''' <remarks></remarks>
-    Private Sub DisplayToTextBox()
+    Private Sub DisplayToTextBox(str As String)
         If Not IsNothing(display) Then
-            display.Text = strInput
+            display.Text = str
         End If
-
     End Sub
 
     ''' <summary>
@@ -76,7 +75,7 @@ Public Class Calculator
             End If
             strInput &= btn
         End If
-        DisplayToTextBox()
+        DisplayToTextBox(strInput)
     End Sub
 
     ''' <summary>
@@ -89,7 +88,7 @@ Public Class Calculator
         Else
             strInput = strInput.Remove(strInput.Length - 1, 1)
         End If
-        DisplayToTextBox()
+        DisplayToTextBox(strInput)
     End Sub
 
     Public Sub SetOperator(op As Operation)
@@ -114,7 +113,14 @@ Public Class Calculator
         End If
     End Sub
 
+    ''' <summary>
+    ''' Return the stored answer. If there is a TextBox set via SetDisplay(),
+    ''' set TextBox text as the answer.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Function GetAnswer() As Double
+        DisplayToTextBox(answer)
         GetAnswer = answer
     End Function
 
