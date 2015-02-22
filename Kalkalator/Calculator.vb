@@ -33,6 +33,17 @@ Public Class Calculator
     End Sub
 
     ''' <summary>
+    ''' Display the string input the Textbox set with SetDisplay().
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub DisplayToTextBox()
+        If Not IsNothing(display) Then
+            display.Text = strInput
+        End If
+
+    End Sub
+
+    ''' <summary>
     ''' Add a numerical string to the string input and displays it.
     ''' If no TextBox is set via SetDisplay(), nothing will be displayed.
     ''' </summary>
@@ -58,12 +69,9 @@ Public Class Calculator
             End If
             strInput &= btn
         End If
-
-        If Not IsNothing(display) Then
-            display.Text = strInput
-        End If
-
+        DisplayToTextBox()
     End Sub
+
     ''' <summary>
     ''' Remove the last character of the string input.
     ''' </summary>
@@ -74,9 +82,6 @@ Public Class Calculator
         Else
             strInput = strInput.Remove(strInput.Length - 1, 1)
         End If
-
-        If Not IsNothing(display) Then
-            display.Text = strInput
-        End If
+        DisplayToTextBox()
     End Sub
 End Class
