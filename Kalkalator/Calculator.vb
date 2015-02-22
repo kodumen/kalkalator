@@ -43,7 +43,11 @@ Public Class Calculator
         End If
 
         If clearDisplay Then
-            display.Text = stringInput
+            If display.Text.Equals("0") And stringInput.First().Equals("."c) Then
+                display.Text &= stringInput
+            Else
+                display.Text = stringInput
+            End If
         Else
             display.Text &= stringInput
         End If
