@@ -6,6 +6,7 @@ Public Class Calculator
     Dim history As String
     Dim answer As Double
     Dim input As Double
+    Dim strInput As String
     Dim display As TextBox
     Dim clearDisplay As Boolean
 
@@ -14,6 +15,7 @@ Public Class Calculator
         history = Nothing
         answer = Nothing
         input = Nothing
+        strInput = "0"
         display = Nothing
         clearDisplay = True ' Clear the display when DisplayText() is first called
     End Sub
@@ -26,44 +28,41 @@ Public Class Calculator
         GetDisplayInput = display.Text
     End Function
 
-    ' Display the string specified on the display
-    ' If an operator was previously used, the whole display text is replaced
-    ' Otherwise, the input string is concatenated
-    Private Sub DisplayInput(stringInput As String)
-        ' This prevents having more than one decimal point on the input
-        If stringInput.Contains(".") And display.Text.Contains(".") Then
-            Return
-        End If
-
-        ' Prevent display from concatenating when it's only zero
-        ' Appending the literal type character C to a single-character string literal forces it to the Char data type.
-        ' Source: https://msdn.microsoft.com/en-us/library/7sx7t66b.aspx?f=255&MSPPError=-2147217396
-        If stringInput.First().Equals("0"c) And display.Text.Equals("0") Then
-            Return
-        End If
-
-        If clearDisplay Then
-            If display.Text.Equals("0") And stringInput.First().Equals("."c) Then
-                display.Text &= stringInput
-            Else
-                display.Text = stringInput
-            End If
-        Else
-            display.Text &= stringInput
-        End If
-
-        ' Stop display from clearing
-        clearDisplay = False
+    Public Sub SetInput(input As Double)
+        Me.input = input
     End Sub
 
-    ' Update the numerical input variable
-    ' If a display is set, display the string as well
-    Public Sub InputNumber(inputString As String)
-        If Not IsNothing(display) Then
-            DisplayInput(inputString)
-            inputString = display.Text
+    ''' <summary>
+    ''' Add a numerical string to the string input and displays it.
+    ''' If no TextBox is set via SetDisplay(), nothing will be displayed.
+    ''' </summary>
+    ''' <param name="btn">The value of the button pressed</param>
+    ''' <remarks></remarks>
+    Public Sub InputButton(btn As String)
+        If Not IsNumeric(btn) Then
+            ' Logic for non-numerical input
+            If btn.Equals(".") Then
+                If Not strInput.Contains(".") Then
+                    strInput &= btn
+                End If
+
+            End If
+
+        Else
+            ' btn is numeric
+            If strInput.Equals("0") Then
+                btn = btn.TrimStart("0")
+                If Not btn.Equals("") Then
+                    strInput = ""   ' clear "0" first before concatenating to it
+                End If
+            End If
+            strInput &= btn
         End If
-        input = Double.Parse(inputString)
+
+        If Not IsNothing(display) Then
+            display.Text = strInput
+        End If
+
     End Sub
 
 End Class
