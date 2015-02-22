@@ -95,4 +95,26 @@ Public Class Calculator
     Public Sub SetOperator(op As Operation)
         arOperation = op
     End Sub
+
+    ''' <summary>
+    ''' Solves the previously computed answer and the current input 
+    ''' based on the currently set arithmetic operation. Answer is stored.
+    ''' Use GetAnswer() to get the answer.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub Solve()
+        If arOperation.Equals(Operation.Addition) Then
+            answer += input
+        ElseIf arOperation.Equals(Operation.Subtraction) Then
+            answer -= input
+        ElseIf arOperation.Equals(Operation.Multiplication) Then
+            answer *= input
+        ElseIf arOperation.Equals(Operation.Division) Then
+            answer /= input
+        End If
+    End Sub
+
+    Public Function GetAnswer() As Double
+        GetAnswer = answer
+    End Function
 End Class
