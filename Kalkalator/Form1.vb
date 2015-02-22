@@ -46,4 +46,8 @@
     Private Sub Btn_9_Click(sender As Object, e As EventArgs) Handles Btn_9.Click
         calculator.InputButton(Btn_9.Text)
     End Sub
+
+    Private Sub Btn_Point_Click(sender As Object, e As EventArgs) Handles Btn_Point.Click
+        calculator.InputButton(Btn_Point.Text)
+    End Sub
 End Class

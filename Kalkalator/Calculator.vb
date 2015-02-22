@@ -41,6 +41,13 @@ Public Class Calculator
     Public Sub InputButton(btn As String)
         If Not IsNumeric(btn) Then
             ' Logic for non-numerical input
+            If btn.Equals(".") Then
+                If Not strInput.Contains(".") Then
+                    strInput &= btn
+                End If
+
+            End If
+
         Else
             ' btn is numeric
             If strInput.Equals("0") Then
