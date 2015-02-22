@@ -2,11 +2,11 @@
 ' other calculator functions such as displaying text.
 
 Public Class Calculator
-    Public Enum Operators As Byte
-        Add
-        Subtract
-        Multiply
-        Divide
+    Public Enum Operation As Byte
+        Addition
+        Subtraction
+        Multiplication
+        Division
     End Enum
     Dim history As String
     Dim answer As Double
@@ -14,7 +14,7 @@ Public Class Calculator
     Dim strInput As String
     Dim display As TextBox
     Dim clearDisplay As Boolean
-    Dim operation As Operators
+    Dim arOperation As Operation
 
     ' Set default values
     Sub New()
@@ -24,7 +24,7 @@ Public Class Calculator
         strInput = "0"
         display = Nothing
         clearDisplay = True ' Clear the display when DisplayText() is first called
-        operation = Operators.Add
+        arOperation = Operation.Addition
     End Sub
 
     Public Sub SetDisplay(display As TextBox)
@@ -92,5 +92,7 @@ Public Class Calculator
         DisplayToTextBox()
     End Sub
 
-
+    Public Sub SetOperator(op As Operation)
+        arOperation = op
+    End Sub
 End Class
