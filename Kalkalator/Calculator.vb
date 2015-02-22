@@ -4,8 +4,8 @@
 Public Class Calculator
 
     Dim history As String
-    Dim input As String
     Dim answer As Double
+    Dim input As Double
     Dim display As TextBox
     Dim clearDisplay As Boolean
 
