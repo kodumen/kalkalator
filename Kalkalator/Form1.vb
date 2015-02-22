@@ -54,4 +54,35 @@
     Private Sub Btn_Backspace_Click(sender As Object, e As EventArgs) Handles Btn_Backspace.Click
         calculator.BackSpace()
     End Sub
+
+    Private Sub Btn_Plus_Click(sender As Object, e As EventArgs) Handles Btn_Plus.Click
+        DoOperation(Kalkalator.Calculator.Operation.Addition)
+    End Sub
+
+    Private Sub Btn_Minus_Click(sender As Object, e As EventArgs) Handles Btn_Minus.Click
+        DoOperation(Kalkalator.Calculator.Operation.Subtraction)
+    End Sub
+
+    Private Sub Btn_Multiply_Click(sender As Object, e As EventArgs) Handles Btn_Multiply.Click
+        DoOperation(Kalkalator.Calculator.Operation.Multiplication)
+    End Sub
+
+    Private Sub Btn_Divide_Click(sender As Object, e As EventArgs) Handles Btn_Divide.Click
+        DoOperation(Kalkalator.Calculator.Operation.Division)
+    End Sub
+
+    ''' <summary>
+    ''' Helper function for doing arithmetic operations
+    ''' </summary>
+    ''' <param name="op"></param>
+    ''' <remarks></remarks>
+    Private Sub DoOperation(op As Calculator.Operation)
+        ' Solve first the previously set operation
+        calculator.SetInput(Double.Parse(Textbox_Disp.Text))
+        calculator.Solve()
+        calculator.GetAnswer()
+        calculator.SetOperator(op)
+        calculator.ClearInput()
+    End Sub
+
 End Class
