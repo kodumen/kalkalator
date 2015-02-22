@@ -64,5 +64,19 @@ Public Class Calculator
         End If
 
     End Sub
+    ''' <summary>
+    ''' Remove the last character of the string input.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub BackSpace()
+        If strInput.Length.Equals(1) Then
+            strInput = "0"
+        Else
+            strInput = strInput.Remove(strInput.Length - 1, 1)
+        End If
 
+        If Not IsNothing(display) Then
+            display.Text = strInput
+        End If
+    End Sub
 End Class

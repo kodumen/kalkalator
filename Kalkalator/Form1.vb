@@ -50,4 +50,8 @@
     Private Sub Btn_Point_Click(sender As Object, e As EventArgs) Handles Btn_Point.Click
         calculator.InputButton(Btn_Point.Text)
     End Sub
+
+    Private Sub Btn_Backspace_Click(sender As Object, e As EventArgs) Handles Btn_Backspace.Click
+        calculator.BackSpace()
+    End Sub
 End Class
