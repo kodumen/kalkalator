@@ -15,6 +15,7 @@ Public Class Calculator
         history = Nothing
         answer = Nothing
         input = Nothing
+        strInput = "0"
         display = Nothing
         clearDisplay = True ' Clear the display when DisplayText() is first called
     End Sub
@@ -32,12 +33,28 @@ Public Class Calculator
     End Sub
 
     ''' <summary>
-    ''' Add a button string to the string input and displays it.
+    ''' Add a numerical string to the string input and displays it.
     ''' If no TextBox is set via SetDisplay(), nothing will be displayed.
     ''' </summary>
     ''' <param name="btn">The value of the button pressed</param>
     ''' <remarks></remarks>
     Public Sub InputButton(btn As String)
+        If Not IsNumeric(btn) Then
+            ' Logic for non-numerical input
+        Else
+            ' btn is numeric
+            If strInput.Equals("0") Then
+                btn = btn.TrimStart("0")
+                If Not btn.Equals("") Then
+                    strInput = ""   ' clear "0" first before concatenating to it
+                End If
+            End If
+            strInput &= btn
+        End If
+
+        If Not IsNothing(display) Then
+            display.Text = strInput
+        End If
 
     End Sub
 
