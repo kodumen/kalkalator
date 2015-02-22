@@ -29,17 +29,23 @@ Public Class Calculator
     ' Display the string specified on the display
     ' If an operator was previously used, the whole display text is replaced
     ' Otherwise, the input string is concatenated
-    Private Sub DisplayInput(text As String)
+    Private Sub DisplayInput(stringInput As String)
         ' This prevents having more than one decimal point on the input
-        If text.Contains(".") And display.Text.Contains(".") Then
+        If stringInput.Contains(".") And display.Text.Contains(".") Then
             Return
         End If
 
+        ' Prevent display from concatenating when it's only zero
+        ' Appending the literal type character C to a single-character string literal forces it to the Char data type.
+        ' Source: https://msdn.microsoft.com/en-us/library/7sx7t66b.aspx?f=255&MSPPError=-2147217396
+        If stringInput.First().Equals("0"c) And display.Text.Equals("0") Then
+            Return
+        End If
 
         If clearDisplay Then
-            display.Text = text
+            display.Text = stringInput
         Else
-            display.Text &= text
+            display.Text &= stringInput
         End If
 
         ' Stop display from clearing
