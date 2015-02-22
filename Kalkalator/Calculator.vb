@@ -2,22 +2,29 @@
 ' other calculator functions such as displaying text.
 
 Public Class Calculator
-
+    Public Enum Operators As Byte
+        Add
+        Subtract
+        Multiply
+        Divide
+    End Enum
     Dim history As String
     Dim answer As Double
     Dim input As Double
     Dim strInput As String
     Dim display As TextBox
     Dim clearDisplay As Boolean
+    Dim operation As Operators
 
     ' Set default values
     Sub New()
         history = Nothing
-        answer = Nothing
+        answer = 0
         input = Nothing
         strInput = "0"
         display = Nothing
         clearDisplay = True ' Clear the display when DisplayText() is first called
+        operation = Operators.Add
     End Sub
 
     Public Sub SetDisplay(display As TextBox)
@@ -84,4 +91,6 @@ Public Class Calculator
         End If
         DisplayToTextBox()
     End Sub
+
+
 End Class
