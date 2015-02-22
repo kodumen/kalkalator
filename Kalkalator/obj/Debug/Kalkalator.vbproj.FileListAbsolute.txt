@@ -1,0 +1,10 @@
+D:\Projects\Kalkalator\Kalkalator\bin\Debug\Kalkalator.exe.config
+D:\Projects\Kalkalator\Kalkalator\bin\Debug\Kalkalator.exe
+D:\Projects\Kalkalator\Kalkalator\bin\Debug\Kalkalator.pdb
+D:\Projects\Kalkalator\Kalkalator\bin\Debug\Kalkalator.xml
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.Form1.resources
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.Resources.resources
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.vbproj.GenerateResource.Cache
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.exe
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.xml
+D:\Projects\Kalkalator\Kalkalator\obj\Debug\Kalkalator.pdb
