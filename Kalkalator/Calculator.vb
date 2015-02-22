@@ -6,6 +6,7 @@ Public Class Calculator
     Dim history As String
     Dim answer As Double
     Dim input As Double
+    Dim strInput As String
     Dim display As TextBox
     Dim clearDisplay As Boolean
 
@@ -26,6 +27,18 @@ Public Class Calculator
         GetDisplayInput = display.Text
     End Function
 
+    Public Sub SetInput(input As Double)
+        Me.input = input
+    End Sub
 
+    ''' <summary>
+    ''' Add a button string to the string input and displays it.
+    ''' If no TextBox is set via SetDisplay(), nothing will be displayed.
+    ''' </summary>
+    ''' <param name="btn">The value of the button pressed</param>
+    ''' <remarks></remarks>
+    Public Sub InputButton(btn As String)
+
+    End Sub
 
 End Class
