@@ -68,7 +68,11 @@ Public Class Calculator
     ' Automatically calls SetInput().
     Public Sub PressNumButton(str As String)
         If IsNumeric(str) Then
-            inputStr &= str
+            If inputStr.Equals("0") Then
+                inputStr = str
+            Else
+                inputStr &= str
+            End If
             SetInput(inputStr)
         ElseIf str.Equals(".") And Not inputStr.Contains(".") Then
             If inputStr.Equals("") Then
