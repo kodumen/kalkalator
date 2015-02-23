@@ -80,5 +80,6 @@
 
     Private Sub Btn_Equals_Click(sender As Object, e As EventArgs) Handles Btn_Equals.Click
         Textbox_Disp.Text = calculator.Solve()
+        calculator.ClearInputString()
     End Sub
 End Class
