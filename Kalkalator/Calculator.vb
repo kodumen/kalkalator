@@ -18,6 +18,7 @@ Public Class Calculator
         input1 = 0
         pushInput = False
         inputStr = ""
+        op = Operation.Addition
     End Sub
 
     Public Sub SetInput(input As Double)
@@ -49,7 +50,17 @@ Public Class Calculator
         Solve = answer
     End Function
 
+    ''' <summary>
+    ''' Get the answer without having to calculate again.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function GetAnswer() As Double
+        GetAnswer = input1
+    End Function
+
     ' Mimics numerical button presses. Concatenates string input. Use ClearInputString() to reset.
+    ' Automatically calls SetInput().
     Public Sub PressNumButton(str As String)
         If IsNumeric(str) Then
             inputStr &= str
