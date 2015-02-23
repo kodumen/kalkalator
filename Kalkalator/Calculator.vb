@@ -30,7 +30,7 @@ Public Class Calculator
         If pushInput Then
             ' Solve input
             ' "Push" answer to input1
-            input1 = Solve()
+            Solve()
             pushInput = False
         End If
         Me.op = op
@@ -47,6 +47,7 @@ Public Class Calculator
         ElseIf op.Equals(Calculator.Operation.Division) Then
             answer = input1 / input0
         End If
+        input1 = answer
         Solve = answer
     End Function
 
