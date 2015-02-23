@@ -16,7 +16,7 @@ Public Class Calculator
     Public Sub New()
         input0 = 0
         input1 = 0
-        isOnInput0 = False
+        isOnInput0 = True
         inputStr = ""
         op = Operation.Addition
     End Sub
