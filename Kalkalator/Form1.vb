@@ -81,4 +81,13 @@
         Textbox_Disp.Text = calculator.Solve()
         calculator.ClearInputString()
     End Sub
+
+    Private Sub Btn_Backspace_Click(sender As Object, e As EventArgs) Handles Btn_Backspace.Click
+        calculator.PressBackspace()
+        Dim inputStr As String
+        inputStr = calculator.GetInputString()
+        If Not inputStr.Equals("") Then
+            Textbox_Disp.Text = inputStr
+        End If
+    End Sub
 End Class

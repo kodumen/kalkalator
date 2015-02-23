@@ -80,6 +80,18 @@ Public Class Calculator
         End If
     End Sub
 
+    ' Mimics the function of a pressed backspace button. That is, remove the last character in the input.
+    ' Automatically sets the string as input
+    Public Sub PressBackspace()
+        If inputStr.Length.Equals(1) Then
+            inputStr = "0"
+            SetInput(inputStr)
+        ElseIf inputStr.Length > 0 Then
+            inputStr = inputStr.Remove(inputStr.Length - 1, 1)
+            SetInput(inputStr)
+        End If
+    End Sub
+
     Public Sub ClearInputString()
         inputStr = ""
     End Sub
