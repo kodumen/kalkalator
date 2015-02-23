@@ -39,13 +39,13 @@ Public Class Calculator
     Public Function Solve() As Double
         Dim answer As Double
         If op.Equals(Calculator.Operation.Addition) Then
-            answer = input0 + input1
+            answer = input1 + input0
         ElseIf op.Equals(Calculator.Operation.Subtraction) Then
-            answer = input0 - input1
+            answer = input1 - input0
         ElseIf op.Equals(Calculator.Operation.Multiplication) Then
-            answer = input0 * input1
+            answer = input1 * input0
         ElseIf op.Equals(Calculator.Operation.Division) Then
-            answer = input0 / input1
+            answer = input1 / input0
         End If
         Solve = answer
     End Function
