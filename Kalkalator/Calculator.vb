@@ -7,10 +7,13 @@ Public Class Calculator
         Multiplication
         Division
     End Enum
-    Dim input As Double
-    Dim answer As Double
+    Dim input0 As Double    ' Input buffer. All input goes here first.
+    Dim input1 As Double    ' Input gets "pushed" here.
+    Dim pushInput As Boolean
+    Dim op As Operation
 
     Public Sub SetInput(input As Double)
-        Me.input = input
+        input0 = input
+        pushInput = True
     End Sub
 End Class
