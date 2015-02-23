@@ -12,6 +12,12 @@ Public Class Calculator
     Dim pushInput As Boolean
     Dim op As Operation
 
+    Public Sub New()
+        input0 = 0
+        input1 = 0
+        pushInput = False
+    End Sub
+
     Public Sub SetInput(input As Double)
         input0 = input
         pushInput = True
@@ -40,6 +46,4 @@ Public Class Calculator
         End If
         Solve = answer
     End Function
-
-
 End Class

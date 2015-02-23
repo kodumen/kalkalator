@@ -1,7 +1,9 @@
 ﻿Public Class Form1
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Dim calculator As Calculator
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        calculator = New Calculator()
     End Sub
 
     Private Sub Btn_0_Click(sender As Object, e As EventArgs) Handles Btn_0.Click
@@ -42,5 +44,9 @@
 
     Private Sub Btn_9_Click(sender As Object, e As EventArgs) Handles Btn_9.Click
 
+    End Sub
+
+    Private Sub Btn_Plus_Click(sender As Object, e As EventArgs) Handles Btn_Plus.Click
+        calculator.SetOperation(Kalkalator.Calculator.Operation.Addition)
     End Sub
 End Class
