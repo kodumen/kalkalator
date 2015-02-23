@@ -63,7 +63,6 @@ Partial Class Form1
         Me.Textbox_Disp.Location = New System.Drawing.Point(12, 32)
         Me.Textbox_Disp.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.Textbox_Disp.Name = "Textbox_Disp"
-        Me.Textbox_Disp.ReadOnly = True
         Me.Textbox_Disp.ShortcutsEnabled = False
         Me.Textbox_Disp.Size = New System.Drawing.Size(231, 38)
         Me.Textbox_Disp.TabIndex = 1

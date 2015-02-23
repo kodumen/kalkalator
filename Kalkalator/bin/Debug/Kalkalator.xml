@@ -19,6 +19,12 @@ Kalkalator
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="M:Kalkalator.Calculator.GetAnswer">
+	<summary>
+ Get the answer without having to calculate again.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
 </member>
 </members>
 </doc>

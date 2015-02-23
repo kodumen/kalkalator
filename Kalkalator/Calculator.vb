@@ -1,139 +1,79 @@
-﻿' Does all the calculations and
-' other calculator functions such as displaying text.
-
+﻿' Does all the calculations.
 Public Class Calculator
     Public Enum Operation As Byte
+        None
         Addition
         Subtraction
         Multiplication
         Division
     End Enum
-    Dim history As String
-    Dim answer As Double
-    Dim input As Double
-    Dim strInput As String
-    Dim display As TextBox
-    Dim clearDisplay As Boolean
-    Dim arOperation As Operation
+    Dim input0 As Double    ' Input buffer. All input goes here first.
+    Dim input1 As Double    ' Input gets "pushed" here.
+    Dim inputStr As String
+    Dim pushInput As Boolean
+    Dim op As Operation
 
-    ' Set default values
-    Sub New()
-        history = Nothing
-        answer = 0
-        input = Nothing
-        strInput = "0"
-        display = Nothing
-        clearDisplay = True ' Clear the display when DisplayText() is first called
-        arOperation = Operation.Addition
+    Public Sub New()
+        input0 = 0
+        input1 = 0
+        pushInput = False
+        inputStr = ""
+        op = Operation.Addition
     End Sub
-
-    Public Sub SetDisplay(display As TextBox)
-        Me.display = display
-    End Sub
-
-    Public Function GetDisplayInput() As String
-        GetDisplayInput = display.Text
-    End Function
 
     Public Sub SetInput(input As Double)
-        Me.input = input
+        input0 = input
+        pushInput = True
     End Sub
 
-    Public Sub SetInputFromDisplay()
-        SetInput(strInput) ' VB can implicitly convert Strings to Double?! SHOOOOOOCK! BEAR SHOCK!
-    End Sub
-
-    ''' <summary>
-    ''' Display the string input to the Textbox set with SetDisplay().
-    ''' </summary>
-    ''' <remarks></remarks>
-    Private Sub DisplayToTextBox(str As String)
-        If Not IsNothing(display) Then
-            display.Text = str
+    Public Sub SetOperation(op As Operation)
+        If pushInput Then
+            ' Solve input
+            ' "Push" answer to input1
+            Solve()
+            pushInput = False
         End If
+        Me.op = op
     End Sub
 
-    ''' <summary>
-    ''' Add a numerical string to the string input and displays it.
-    ''' If no TextBox is set via SetDisplay(), nothing will be displayed.
-    ''' </summary>
-    ''' <param name="btn">The value of the button pressed</param>
-    ''' <remarks></remarks>
-    Public Sub InputButton(btn As String)
-        If Not IsNumeric(btn) Then
-            ' Logic for non-numerical input
-            If btn.Equals(".") Then
-                If Not strInput.Contains(".") Then
-                    strInput &= btn
-                End If
-
-            End If
-
-        Else
-            ' btn is numeric
-            If strInput.Equals("0") Then
-                btn = btn.TrimStart("0")
-                If Not btn.Equals("") Then
-                    strInput = ""   ' clear "0" first before concatenating to it
-                End If
-            End If
-            strInput &= btn
+    Public Function Solve() As Double
+        Dim answer As Double
+        If op.Equals(Calculator.Operation.Addition) Then
+            answer = input1 + input0
+        ElseIf op.Equals(Calculator.Operation.Subtraction) Then
+            answer = input1 - input0
+        ElseIf op.Equals(Calculator.Operation.Multiplication) Then
+            answer = input1 * input0
+        ElseIf op.Equals(Calculator.Operation.Division) Then
+            answer = input1 / input0
         End If
-        DisplayToTextBox(strInput)
-    End Sub
+        input1 = answer
+        Solve = answer
+    End Function
 
     ''' <summary>
-    ''' Remove the last character of the string input.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub BackSpace()
-        If strInput.Length.Equals(1) Then
-            strInput = "0"
-        Else
-            strInput = strInput.Remove(strInput.Length - 1, 1)
-        End If
-        DisplayToTextBox(strInput)
-    End Sub
-
-    Public Sub SetOperator(op As Operation)
-        arOperation = op
-    End Sub
-
-    ''' <summary>
-    ''' Solves the previously computed answer and the current input 
-    ''' based on the currently set arithmetic operation. Answer is stored.
-    ''' Use GetAnswer() to get the answer.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub Solve()
-        If arOperation.Equals(Operation.Addition) Then
-            answer += input
-        ElseIf arOperation.Equals(Operation.Subtraction) Then
-            answer -= input
-        ElseIf arOperation.Equals(Operation.Multiplication) Then
-            answer *= input
-        ElseIf arOperation.Equals(Operation.Division) Then
-            answer /= input
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Return the stored answer. If there is a TextBox set via SetDisplay(),
-    ''' set answer as TextBox text.
+    ''' Get the answer without having to calculate again.
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function GetAnswer() As Double
-        DisplayToTextBox(answer)
-        GetAnswer = answer
+        GetAnswer = input1
     End Function
 
-    ''' <summary>
-    ''' Reset the input.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub ClearInput()
-        strInput = "0"
-        input = 0
+    ' Mimics numerical button presses. Concatenates string input. Use ClearInputString() to reset.
+    ' Automatically calls SetInput().
+    Public Sub PressNumButton(str As String)
+        If IsNumeric(str) Then
+            inputStr &= str
+        End If
+        SetInput(inputStr)
     End Sub
+
+    Public Sub ClearInputString()
+        inputStr = ""
+    End Sub
+
+    Public Function GetInputString() As String
+        GetInputString = inputStr
+    End Function
 End Class
