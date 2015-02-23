@@ -17,7 +17,7 @@ Public Class Calculator
         pushInput = True
     End Sub
 
-    Public Sub SetOperator(op As Operation)
+    Public Sub SetOperation(op As Operation)
         If pushInput Then
             ' Solve input
             ' "Push" answer to input1
@@ -25,5 +25,5 @@ Public Class Calculator
         Me.op = op
     End Sub
 
-
+    `
 End Class
