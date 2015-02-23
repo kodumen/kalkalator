@@ -1,12 +1,7 @@
-﻿' Does all the calculations.
+﻿' Does all the calculations and
+' other calculator functions such as displaying text.
+
 Public Class Calculator
-    Public Enum Operation As Byte
-        None
-        Addition
-        Subtraction
-        Multiplication
-        Division
-    End Enum
     Dim input0 As Double
     Dim input1 As Double
     Dim answer As Double        ' Store answer here
