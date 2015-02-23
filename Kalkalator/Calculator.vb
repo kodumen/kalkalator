@@ -16,4 +16,14 @@ Public Class Calculator
         input0 = input
         pushInput = True
     End Sub
+
+    Public Sub SetOperator(op As Operation)
+        If pushInput Then
+            ' Solve input
+            ' "Push" answer to input1
+        End If
+        Me.op = op
+    End Sub
+
+
 End Class
