@@ -1,6 +1,4 @@
-﻿' Does all the calculations and
-' other calculator functions such as displaying text.
-
+﻿' Does all the calculations.
 Public Class Calculator
 
 End Class
