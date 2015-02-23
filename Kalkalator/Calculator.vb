@@ -7,47 +7,51 @@ Public Class Calculator
         Multiplication
         Division
     End Enum
-    Dim input0 As Double    ' Input buffer. All input goes here first.
-    Dim input1 As Double    ' Input gets "pushed" here.
+    Dim input0 As Double ' Answer is stored here as well
+    Dim input1 As Double
     Dim inputStr As String
-    Dim pushInput As Boolean
+    Dim isOnInput0 As Boolean
     Dim op As Operation
 
     Public Sub New()
         input0 = 0
         input1 = 0
-        pushInput = False
+        isOnInput0 = False
         inputStr = ""
         op = Operation.Addition
     End Sub
 
     Public Sub SetInput(input As Double)
-        input0 = input
-        pushInput = True
+        If isOnInput0 Then
+            input0 = input
+        Else
+            input1 = input
+        End If
     End Sub
 
     Public Sub SetOperation(op As Operation)
-        If pushInput Then
-            ' Solve input
-            ' "Push" answer to input1
+        If isOnInput0 Then
+            input1 = input0
+        Else
             Solve()
-            pushInput = False
         End If
+        isOnInput0 = False
         Me.op = op
     End Sub
 
     Public Function Solve() As Double
         Dim answer As Double
         If op.Equals(Calculator.Operation.Addition) Then
-            answer = input1 + input0
+            answer = input0 + input1
         ElseIf op.Equals(Calculator.Operation.Subtraction) Then
-            answer = input1 - input0
+            answer = input0 - input1
         ElseIf op.Equals(Calculator.Operation.Multiplication) Then
-            answer = input1 * input0
+            answer = input0 * input1
         ElseIf op.Equals(Calculator.Operation.Division) Then
-            answer = input1 / input0
+            answer = input0 / input1
         End If
-        input1 = answer
+        input0 = answer
+        isOnInput0 = True
         Solve = answer
     End Function
 
