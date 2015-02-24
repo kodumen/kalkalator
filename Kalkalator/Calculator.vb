@@ -33,6 +33,14 @@ Public Class Calculator
         End If
     End Sub
 
+    Public Function GetInput() As Double
+        If isOnInput0 Then
+            GetInput = input0
+        Else
+            GetInput = input1
+        End If
+    End Function
+
     Public Sub SetOperation(op As Operation)
         If isOnInput0 Then
             input1 = input0
