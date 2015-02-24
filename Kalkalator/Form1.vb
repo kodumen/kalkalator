@@ -90,4 +90,10 @@
             Textbox_Disp.Text = inputStr
         End If
     End Sub
+
+    Private Sub Btn_CE_Click(sender As Object, e As EventArgs) Handles Btn_CE.Click
+        calculator.ClearInputString()
+        calculator.PressNumButton("0")  ' Reset input to 0
+        Textbox_Disp.Text = calculator.GetInputString()
+    End Sub
 End Class
