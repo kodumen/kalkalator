@@ -96,4 +96,9 @@
         calculator.PressNumButton("0")  ' Reset input to 0
         Textbox_Disp.Text = calculator.GetInputString()
     End Sub
+
+    Private Sub Btn_C_Click(sender As Object, e As EventArgs) Handles Btn_C.Click
+        calculator.Reset()
+        Textbox_Disp.Text = "0"
+    End Sub
 End Class

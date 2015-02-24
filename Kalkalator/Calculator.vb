@@ -14,6 +14,10 @@ Public Class Calculator
     Dim op As Operation
 
     Public Sub New()
+        Reset()
+    End Sub
+
+    Public Sub Reset()
         input0 = 0
         input1 = 0
         isOnInput0 = True
