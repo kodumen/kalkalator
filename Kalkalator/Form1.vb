@@ -84,11 +84,12 @@
 
     Private Sub Btn_Backspace_Click(sender As Object, e As EventArgs) Handles Btn_Backspace.Click
         calculator.PressBackspace()
-        Dim inputStr As String
-        inputStr = calculator.GetInputString()
-        If Not inputStr.Equals("") Then
-            Textbox_Disp.Text = inputStr
-        End If
+        Textbox_Disp.Text = calculator.GetInput().ToString()
+        'Dim inputStr As String
+        'inputStr = calculator.GetInputString()
+        'If Not inputStr.Equals("") Then
+        '    Textbox_Disp.Text = inputStr
+        'End If
     End Sub
 
     Private Sub Btn_CE_Click(sender As Object, e As EventArgs) Handles Btn_CE.Click
