@@ -44,7 +44,7 @@ Public Class Calculator
     Public Sub SetOperation(op As Operation)
         If isOnInput0 Then
             input1 = input0
-        Else
+        ElseIf Not inputStr.Equals("") Then
             Solve()
         End If
         isOnInput0 = False
