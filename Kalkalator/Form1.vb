@@ -108,4 +108,9 @@
         calculator.Negate()
         Textbox_Disp.Text = calculator.GetInput().ToString()
     End Sub
+
+    Private Sub Btn_Sqrt_Click(sender As Object, e As EventArgs) Handles Btn_Sqrt.Click
+        calculator.SquareRoot()
+        Textbox_Disp.Text = calculator.GetInput()
+    End Sub
 End Class

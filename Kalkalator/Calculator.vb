@@ -131,4 +131,8 @@ Public Class Calculator
             input1 *= -1
         End If
     End Sub
+
+    Public Sub SquareRoot()
+        SetInput(Math.Sqrt(GetInput()))
+    End Sub
 End Class
