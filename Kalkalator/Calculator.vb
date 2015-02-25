@@ -79,6 +79,10 @@ Public Class Calculator
     ' Mimics numerical button presses. Concatenates string input. Use ClearInputString() to reset.
     ' Automatically calls SetInput().
     Public Sub PressNumButton(str As String)
+        ' Always keep the inputStr up-to-date with the active input unless it was reset.
+        If inputStr.Length > 0 Then
+            inputStr = GetInput().ToString()
+        End If
         If IsNumeric(str) Then
             If inputStr.Equals("0") Then
                 inputStr = str
