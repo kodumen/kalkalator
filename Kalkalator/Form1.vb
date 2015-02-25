@@ -4,6 +4,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         calculator = New Calculator()
+        Textbox_Disp.Text = calculator.GetInput().ToString()
     End Sub
 
     Private Sub PressButton(str As String)
