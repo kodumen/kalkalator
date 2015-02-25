@@ -112,10 +112,12 @@
     Private Sub Btn_Sqrt_Click(sender As Object, e As EventArgs) Handles Btn_Sqrt.Click
         calculator.SquareRoot()
         Textbox_Disp.Text = calculator.GetInput()
+        calculator.ClearInputString()
     End Sub
 
     Private Sub Btn_Percent_Click(sender As Object, e As EventArgs) Handles Btn_Percent.Click
         calculator.Percent()
         Textbox_Disp.Text = calculator.GetInput()
+        calculator.ClearInputString()
     End Sub
 End Class
