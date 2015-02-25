@@ -23,12 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Textbox_Disp = New System.Windows.Forms.TextBox()
-        Me.Textbox_Hist = New System.Windows.Forms.TextBox()
-        Me.Btn_MC = New System.Windows.Forms.Button()
-        Me.Btn_MR = New System.Windows.Forms.Button()
-        Me.Btn_MS = New System.Windows.Forms.Button()
-        Me.Btn_Mplus = New System.Windows.Forms.Button()
-        Me.Btn_Mminus = New System.Windows.Forms.Button()
         Me.Btn_Sqrt = New System.Windows.Forms.Button()
         Me.Btn_Sign = New System.Windows.Forms.Button()
         Me.Btn_C = New System.Windows.Forms.Button()
@@ -70,74 +64,9 @@ Partial Class Form1
         Me.Textbox_Disp.Text = "0"
         Me.Textbox_Disp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Textbox_Hist
-        '
-        Me.Textbox_Hist.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Textbox_Hist.Cursor = System.Windows.Forms.Cursors.No
-        Me.Textbox_Hist.Enabled = False
-        Me.Textbox_Hist.Location = New System.Drawing.Point(12, 12)
-        Me.Textbox_Hist.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-        Me.Textbox_Hist.Name = "Textbox_Hist"
-        Me.Textbox_Hist.ReadOnly = True
-        Me.Textbox_Hist.ShortcutsEnabled = False
-        Me.Textbox_Hist.Size = New System.Drawing.Size(231, 20)
-        Me.Textbox_Hist.TabIndex = 2
-        Me.Textbox_Hist.TabStop = False
-        Me.Textbox_Hist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Btn_MC
-        '
-        Me.Btn_MC.Location = New System.Drawing.Point(12, 85)
-        Me.Btn_MC.Name = "Btn_MC"
-        Me.Btn_MC.Size = New System.Drawing.Size(39, 28)
-        Me.Btn_MC.TabIndex = 3
-        Me.Btn_MC.TabStop = False
-        Me.Btn_MC.Text = "MC"
-        Me.Btn_MC.UseVisualStyleBackColor = True
-        '
-        'Btn_MR
-        '
-        Me.Btn_MR.Location = New System.Drawing.Point(60, 85)
-        Me.Btn_MR.Name = "Btn_MR"
-        Me.Btn_MR.Size = New System.Drawing.Size(39, 28)
-        Me.Btn_MR.TabIndex = 4
-        Me.Btn_MR.TabStop = False
-        Me.Btn_MR.Text = "MR"
-        Me.Btn_MR.UseVisualStyleBackColor = True
-        '
-        'Btn_MS
-        '
-        Me.Btn_MS.Location = New System.Drawing.Point(108, 85)
-        Me.Btn_MS.Name = "Btn_MS"
-        Me.Btn_MS.Size = New System.Drawing.Size(39, 28)
-        Me.Btn_MS.TabIndex = 5
-        Me.Btn_MS.TabStop = False
-        Me.Btn_MS.Text = "MS"
-        Me.Btn_MS.UseVisualStyleBackColor = True
-        '
-        'Btn_Mplus
-        '
-        Me.Btn_Mplus.Location = New System.Drawing.Point(156, 85)
-        Me.Btn_Mplus.Name = "Btn_Mplus"
-        Me.Btn_Mplus.Size = New System.Drawing.Size(39, 28)
-        Me.Btn_Mplus.TabIndex = 6
-        Me.Btn_Mplus.TabStop = False
-        Me.Btn_Mplus.Text = "M+"
-        Me.Btn_Mplus.UseVisualStyleBackColor = True
-        '
-        'Btn_Mminus
-        '
-        Me.Btn_Mminus.Location = New System.Drawing.Point(204, 85)
-        Me.Btn_Mminus.Name = "Btn_Mminus"
-        Me.Btn_Mminus.Size = New System.Drawing.Size(39, 28)
-        Me.Btn_Mminus.TabIndex = 7
-        Me.Btn_Mminus.TabStop = False
-        Me.Btn_Mminus.Text = "M-"
-        Me.Btn_Mminus.UseVisualStyleBackColor = True
-        '
         'Btn_Sqrt
         '
-        Me.Btn_Sqrt.Location = New System.Drawing.Point(204, 119)
+        Me.Btn_Sqrt.Location = New System.Drawing.Point(204, 76)
         Me.Btn_Sqrt.Name = "Btn_Sqrt"
         Me.Btn_Sqrt.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Sqrt.TabIndex = 12
@@ -147,7 +76,7 @@ Partial Class Form1
         '
         'Btn_Sign
         '
-        Me.Btn_Sign.Location = New System.Drawing.Point(156, 119)
+        Me.Btn_Sign.Location = New System.Drawing.Point(156, 76)
         Me.Btn_Sign.Name = "Btn_Sign"
         Me.Btn_Sign.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Sign.TabIndex = 11
@@ -157,7 +86,7 @@ Partial Class Form1
         '
         'Btn_C
         '
-        Me.Btn_C.Location = New System.Drawing.Point(108, 119)
+        Me.Btn_C.Location = New System.Drawing.Point(108, 76)
         Me.Btn_C.Name = "Btn_C"
         Me.Btn_C.Size = New System.Drawing.Size(39, 28)
         Me.Btn_C.TabIndex = 10
@@ -167,7 +96,7 @@ Partial Class Form1
         '
         'Btn_CE
         '
-        Me.Btn_CE.Location = New System.Drawing.Point(60, 119)
+        Me.Btn_CE.Location = New System.Drawing.Point(60, 76)
         Me.Btn_CE.Name = "Btn_CE"
         Me.Btn_CE.Size = New System.Drawing.Size(39, 28)
         Me.Btn_CE.TabIndex = 9
@@ -177,7 +106,7 @@ Partial Class Form1
         '
         'Btn_Backspace
         '
-        Me.Btn_Backspace.Location = New System.Drawing.Point(12, 119)
+        Me.Btn_Backspace.Location = New System.Drawing.Point(12, 76)
         Me.Btn_Backspace.Name = "Btn_Backspace"
         Me.Btn_Backspace.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Backspace.TabIndex = 8
@@ -187,7 +116,7 @@ Partial Class Form1
         '
         'Btn_Percent
         '
-        Me.Btn_Percent.Location = New System.Drawing.Point(204, 153)
+        Me.Btn_Percent.Location = New System.Drawing.Point(204, 110)
         Me.Btn_Percent.Name = "Btn_Percent"
         Me.Btn_Percent.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Percent.TabIndex = 17
@@ -197,7 +126,7 @@ Partial Class Form1
         '
         'Btn_Divide
         '
-        Me.Btn_Divide.Location = New System.Drawing.Point(156, 153)
+        Me.Btn_Divide.Location = New System.Drawing.Point(156, 110)
         Me.Btn_Divide.Name = "Btn_Divide"
         Me.Btn_Divide.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Divide.TabIndex = 16
@@ -207,7 +136,7 @@ Partial Class Form1
         '
         'Btn_9
         '
-        Me.Btn_9.Location = New System.Drawing.Point(108, 153)
+        Me.Btn_9.Location = New System.Drawing.Point(108, 110)
         Me.Btn_9.Name = "Btn_9"
         Me.Btn_9.Size = New System.Drawing.Size(39, 28)
         Me.Btn_9.TabIndex = 15
@@ -217,7 +146,7 @@ Partial Class Form1
         '
         'Btn_8
         '
-        Me.Btn_8.Location = New System.Drawing.Point(60, 153)
+        Me.Btn_8.Location = New System.Drawing.Point(60, 110)
         Me.Btn_8.Name = "Btn_8"
         Me.Btn_8.Size = New System.Drawing.Size(39, 28)
         Me.Btn_8.TabIndex = 14
@@ -227,7 +156,7 @@ Partial Class Form1
         '
         'Btn_7
         '
-        Me.Btn_7.Location = New System.Drawing.Point(12, 153)
+        Me.Btn_7.Location = New System.Drawing.Point(12, 110)
         Me.Btn_7.Name = "Btn_7"
         Me.Btn_7.Size = New System.Drawing.Size(39, 28)
         Me.Btn_7.TabIndex = 13
@@ -237,7 +166,7 @@ Partial Class Form1
         '
         'Btn_Reciprocal
         '
-        Me.Btn_Reciprocal.Location = New System.Drawing.Point(204, 187)
+        Me.Btn_Reciprocal.Location = New System.Drawing.Point(204, 144)
         Me.Btn_Reciprocal.Name = "Btn_Reciprocal"
         Me.Btn_Reciprocal.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Reciprocal.TabIndex = 22
@@ -247,7 +176,7 @@ Partial Class Form1
         '
         'Btn_Multiply
         '
-        Me.Btn_Multiply.Location = New System.Drawing.Point(156, 187)
+        Me.Btn_Multiply.Location = New System.Drawing.Point(156, 144)
         Me.Btn_Multiply.Name = "Btn_Multiply"
         Me.Btn_Multiply.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Multiply.TabIndex = 21
@@ -257,7 +186,7 @@ Partial Class Form1
         '
         'Btn_6
         '
-        Me.Btn_6.Location = New System.Drawing.Point(108, 187)
+        Me.Btn_6.Location = New System.Drawing.Point(108, 144)
         Me.Btn_6.Name = "Btn_6"
         Me.Btn_6.Size = New System.Drawing.Size(39, 28)
         Me.Btn_6.TabIndex = 20
@@ -267,7 +196,7 @@ Partial Class Form1
         '
         'Btn_5
         '
-        Me.Btn_5.Location = New System.Drawing.Point(60, 187)
+        Me.Btn_5.Location = New System.Drawing.Point(60, 144)
         Me.Btn_5.Name = "Btn_5"
         Me.Btn_5.Size = New System.Drawing.Size(39, 28)
         Me.Btn_5.TabIndex = 19
@@ -277,7 +206,7 @@ Partial Class Form1
         '
         'Btn_4
         '
-        Me.Btn_4.Location = New System.Drawing.Point(12, 187)
+        Me.Btn_4.Location = New System.Drawing.Point(12, 144)
         Me.Btn_4.Name = "Btn_4"
         Me.Btn_4.Size = New System.Drawing.Size(39, 28)
         Me.Btn_4.TabIndex = 18
@@ -287,7 +216,7 @@ Partial Class Form1
         '
         'Btn_3
         '
-        Me.Btn_3.Location = New System.Drawing.Point(108, 221)
+        Me.Btn_3.Location = New System.Drawing.Point(108, 178)
         Me.Btn_3.Name = "Btn_3"
         Me.Btn_3.Size = New System.Drawing.Size(39, 28)
         Me.Btn_3.TabIndex = 25
@@ -297,7 +226,7 @@ Partial Class Form1
         '
         'Btn_2
         '
-        Me.Btn_2.Location = New System.Drawing.Point(60, 221)
+        Me.Btn_2.Location = New System.Drawing.Point(60, 178)
         Me.Btn_2.Name = "Btn_2"
         Me.Btn_2.Size = New System.Drawing.Size(39, 28)
         Me.Btn_2.TabIndex = 24
@@ -307,7 +236,7 @@ Partial Class Form1
         '
         'Btn_1
         '
-        Me.Btn_1.Location = New System.Drawing.Point(12, 221)
+        Me.Btn_1.Location = New System.Drawing.Point(12, 178)
         Me.Btn_1.Name = "Btn_1"
         Me.Btn_1.Size = New System.Drawing.Size(39, 28)
         Me.Btn_1.TabIndex = 23
@@ -317,7 +246,7 @@ Partial Class Form1
         '
         'Btn_Minus
         '
-        Me.Btn_Minus.Location = New System.Drawing.Point(156, 221)
+        Me.Btn_Minus.Location = New System.Drawing.Point(156, 178)
         Me.Btn_Minus.Name = "Btn_Minus"
         Me.Btn_Minus.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Minus.TabIndex = 26
@@ -327,7 +256,7 @@ Partial Class Form1
         '
         'Btn_0
         '
-        Me.Btn_0.Location = New System.Drawing.Point(12, 255)
+        Me.Btn_0.Location = New System.Drawing.Point(12, 212)
         Me.Btn_0.Name = "Btn_0"
         Me.Btn_0.Size = New System.Drawing.Size(87, 28)
         Me.Btn_0.TabIndex = 27
@@ -337,7 +266,7 @@ Partial Class Form1
         '
         'Btn_Point
         '
-        Me.Btn_Point.Location = New System.Drawing.Point(108, 255)
+        Me.Btn_Point.Location = New System.Drawing.Point(108, 212)
         Me.Btn_Point.Name = "Btn_Point"
         Me.Btn_Point.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Point.TabIndex = 28
@@ -347,7 +276,7 @@ Partial Class Form1
         '
         'Btn_Plus
         '
-        Me.Btn_Plus.Location = New System.Drawing.Point(156, 255)
+        Me.Btn_Plus.Location = New System.Drawing.Point(156, 212)
         Me.Btn_Plus.Name = "Btn_Plus"
         Me.Btn_Plus.Size = New System.Drawing.Size(39, 28)
         Me.Btn_Plus.TabIndex = 29
@@ -357,7 +286,7 @@ Partial Class Form1
         '
         'Btn_Equals
         '
-        Me.Btn_Equals.Location = New System.Drawing.Point(204, 221)
+        Me.Btn_Equals.Location = New System.Drawing.Point(204, 178)
         Me.Btn_Equals.Name = "Btn_Equals"
         Me.Btn_Equals.Size = New System.Drawing.Size(39, 62)
         Me.Btn_Equals.TabIndex = 30
@@ -370,7 +299,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(256, 308)
+        Me.ClientSize = New System.Drawing.Size(256, 264)
         Me.Controls.Add(Me.Btn_Equals)
         Me.Controls.Add(Me.Btn_Plus)
         Me.Controls.Add(Me.Btn_Point)
@@ -394,12 +323,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Btn_C)
         Me.Controls.Add(Me.Btn_CE)
         Me.Controls.Add(Me.Btn_Backspace)
-        Me.Controls.Add(Me.Btn_Mminus)
-        Me.Controls.Add(Me.Btn_Mplus)
-        Me.Controls.Add(Me.Btn_MS)
-        Me.Controls.Add(Me.Btn_MR)
-        Me.Controls.Add(Me.Btn_MC)
-        Me.Controls.Add(Me.Textbox_Hist)
         Me.Controls.Add(Me.Textbox_Disp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -410,12 +333,6 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents Textbox_Disp As System.Windows.Forms.TextBox
-    Friend WithEvents Textbox_Hist As System.Windows.Forms.TextBox
-    Friend WithEvents Btn_MC As System.Windows.Forms.Button
-    Friend WithEvents Btn_MR As System.Windows.Forms.Button
-    Friend WithEvents Btn_MS As System.Windows.Forms.Button
-    Friend WithEvents Btn_Mplus As System.Windows.Forms.Button
-    Friend WithEvents Btn_Mminus As System.Windows.Forms.Button
     Friend WithEvents Btn_Sqrt As System.Windows.Forms.Button
     Friend WithEvents Btn_Sign As System.Windows.Forms.Button
     Friend WithEvents Btn_C As System.Windows.Forms.Button
