@@ -135,4 +135,8 @@ Public Class Calculator
     Public Sub SquareRoot()
         SetInput(Math.Sqrt(GetInput()))
     End Sub
+
+    Public Sub Percent()
+        SetInput(input0 * (input1 / 100))
+    End Sub
 End Class

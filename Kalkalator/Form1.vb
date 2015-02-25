@@ -113,4 +113,9 @@
         calculator.SquareRoot()
         Textbox_Disp.Text = calculator.GetInput()
     End Sub
+
+    Private Sub Btn_Percent_Click(sender As Object, e As EventArgs) Handles Btn_Percent.Click
+        calculator.Percent()
+        Textbox_Disp.Text = calculator.GetInput()
+    End Sub
 End Class
