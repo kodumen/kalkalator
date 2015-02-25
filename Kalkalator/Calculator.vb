@@ -139,4 +139,8 @@ Public Class Calculator
     Public Sub Percent()
         SetInput(input0 * (input1 / 100))
     End Sub
+
+    Public Sub Reciprocal()
+        SetInput(1 / GetInput())
+    End Sub
 End Class

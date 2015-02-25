@@ -120,4 +120,10 @@
         Textbox_Disp.Text = calculator.GetInput()
         calculator.ClearInputString()
     End Sub
+
+    Private Sub Btn_Reciprocal_Click(sender As Object, e As EventArgs) Handles Btn_Reciprocal.Click
+        calculator.Reciprocal()
+        Textbox_Disp.Text = calculator.GetInput()
+        calculator.ClearInputString()
+    End Sub
 End Class
