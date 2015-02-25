@@ -102,4 +102,9 @@
         calculator.Reset()
         Textbox_Disp.Text = "0"
     End Sub
+
+    Private Sub Btn_Sign_Click(sender As Object, e As EventArgs) Handles Btn_Sign.Click
+        calculator.Negate()
+        Textbox_Disp.Text = calculator.GetInput().ToString()
+    End Sub
 End Class

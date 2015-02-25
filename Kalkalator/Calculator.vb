@@ -115,4 +115,16 @@ Public Class Calculator
     Public Function GetInputString() As String
         GetInputString = inputStr
     End Function
+
+    ''' <summary>
+    ''' Negate the currently active input. Does not change the input string.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub Negate()
+        If isOnInput0 Then
+            input0 *= -1
+        Else
+            input1 *= -1
+        End If
+    End Sub
 End Class

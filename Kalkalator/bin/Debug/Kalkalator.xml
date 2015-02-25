@@ -25,6 +25,11 @@ Kalkalator
  </summary>
 	<returns></returns>
 	<remarks></remarks>
+</member><member name="M:Kalkalator.Calculator.Negate">
+	<summary>
+ Negate the currently active input. Does not change the input string.
+ </summary>
+	<remarks></remarks>
 </member>
 </members>
 </doc>
